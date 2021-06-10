@@ -1,8 +1,6 @@
 package com.example.functions;
 
 import com.example.fixture.GraphFixture;
-import com.example.functions.common.DirectPaths;
-import org.jgrapht.GraphPath;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 import org.junit.jupiter.api.BeforeAll;
@@ -27,19 +25,19 @@ class LatencyTest {
 
 	@Test
 	void shouldReturnTheCorrectLatencyBetweenTwoVertexes() {
-		Integer latency = Latency.averageLatencyByPath(testGraph, List.of('A', 'B'));
+		Integer latency = Latency.averageByPath(testGraph, List.of('A', 'B'));
 		assertEquals(5, latency, "The latency of from A->B should be equal to 5");
 	}
 
 	@Test
 	void shouldReturnNullWhenNoPathIsProvided() {
-		Integer latency = Latency.averageLatencyByPath(testGraph, List.of());
+		Integer latency = Latency.averageByPath(testGraph, List.of());
 		assertNull(latency, "There is no latency when a path is not provided");
 	}
 
 	@Test
 	void shouldReturnNullWhenAPathSizeOfOneIsProvided() {
-		Integer latency = Latency.averageLatencyByPath(testGraph, List.of('A'));
+		Integer latency = Latency.averageByPath(testGraph, List.of('A'));
 		assertNull(latency, "We can't calculate latency when a path with one vertex is provided");
 	}
 }

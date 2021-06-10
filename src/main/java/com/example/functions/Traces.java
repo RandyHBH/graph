@@ -8,12 +8,12 @@ import java.util.List;
 
 import static com.example.functions.common.DirectPaths.getGraphPaths;
 
-public class TracesByHops {
+public class Traces {
 
-	private TracesByHops() {
+	private Traces() {
 	}
 
-	public static Integer tracesWithAmountOfHops(SimpleDirectedWeightedGraph<Character, DefaultWeightedEdge> graph, char start, char end, int minHops, int maxHops) {
+	public static Integer byAmountOfHops(SimpleDirectedWeightedGraph<Character, DefaultWeightedEdge> graph, char start, char end, int minHops, int maxHops) {
 		if (minHops < 0 || maxHops < 0) return null;
 		if (minHops > maxHops) return null;
 

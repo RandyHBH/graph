@@ -13,7 +13,7 @@ public class Latency {
 	private Latency() {
 	}
 
-	public static Integer averageLatencyByPath(SimpleDirectedWeightedGraph<Character, DefaultWeightedEdge> graph, List<Character> path) {
+	public static Integer averageByPath(SimpleDirectedWeightedGraph<Character, DefaultWeightedEdge> graph, List<Character> path) {
 		if (path == null) return null;
 		if (path.isEmpty()) return null;
 		if (path.size() == 1) return null;
