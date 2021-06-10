@@ -1,7 +1,6 @@
 
 #### **Pre-requisites**
 1. JDK 11
-2. Maven 3.6.3 or higher
 
 ### **How to Run the app**
 1. Clone the project: `git clone https://github.com/RandyHBH/graph.git`
