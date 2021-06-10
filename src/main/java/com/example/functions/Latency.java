@@ -18,7 +18,7 @@ public class Latency {
 		if (path.isEmpty()) return null;
 		if (path.size() == 1) return null;
 
-		Double latency = 0.0;
+		int latency = 0;
 		for (int i = 0, pathSize = path.size() - 1; i < pathSize; i++) {
 			var nextVertex = path.get(i + 1);
 
@@ -27,13 +27,13 @@ public class Latency {
 
 			if (!currentVertexTargets.isEmpty() && currentVertexTargets.contains(nextVertex)) {
 				var index = currentVertexTargets.indexOf(nextVertex);
-				latency += graph.getEdgeWeight(defaultWeightedEdges.get(index));
+				latency += (int) graph.getEdgeWeight(defaultWeightedEdges.get(index));
 			} else {
 				System.out.println("NO SUCH TRACE");
 				return null;
 			}
 		}
 		System.out.println(latency);
-		return latency.intValue();
+		return latency;
 	}
 }
